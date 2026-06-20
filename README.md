@@ -1,4 +1,4 @@
-# 🎬 Movie Discovery App
+#  Movie Discovery App
 
 A movie discovery web app built with **Next.js (App Router) + TypeScript**. Browse popular films, search by title, view full details in an expandable modal, and save favorites that persist across reloads. All movie data comes from **[The Movie Database (TMDB)](https://www.themoviedb.org/) API (v3)**.
 
