@@ -1,0 +1,154 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Tablet: 3 columns */
+@media (min-width: 560px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Small desktop: 4 columns */
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Wide: 5 columns */
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Ultra-wide: 6 columns */
+@media (min-width: 1500px) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* ---- States ---- */
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 80px 16px;
+  color: var(--muted);
+}
+
+.stateIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.errorIcon {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(245, 177, 61, 0.08);
+}
+
+.stateTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.stateText {
+  margin: 0 0 22px;
+  max-width: 420px;
+}
+
+.retry {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: none;
+  border-radius: 999px;
+  padding: 11px 22px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: transform var(--dur) var(--ease), filter var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.retry:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px var(--accent-glow);
+}
+
+.retry:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* ---- Shimmer skeletons ---- */
+.skeleton {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.skelPoster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+}
+
+.skelBody {
+  padding: 12px 13px 15px;
+}
+
+.skelLine {
+  height: 11px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.skelLine:last-child {
+  margin-bottom: 0;
+}
+
+.short {
+  width: 45%;
+}
+
+.skelPoster,
+.skelLine {
+  background: linear-gradient(
+    100deg,
+    var(--surface-2) 30%,
+    var(--surface-3) 50%,
+    var(--surface-2) 70%
+  );
+  background-size: 220% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 180% 0;
+  }
+  100% {
+    background-position: -80% 0;
+  }
+}

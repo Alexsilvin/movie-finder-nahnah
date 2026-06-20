@@ -1,0 +1,77 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  background: rgba(7, 8, 13, 0.62);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform var(--dur) var(--ease), background var(--dur) var(--ease),
+    color var(--dur) var(--ease), box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+
+.btn:hover {
+  background: rgba(7, 8, 13, 0.82);
+  transform: scale(1.08);
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+.labeled {
+  width: auto;
+  height: auto;
+  padding: 10px 16px;
+  background: var(--surface-2);
+  border-color: var(--border);
+}
+
+.labeled:hover {
+  background: var(--surface-3);
+  transform: translateY(-1px);
+}
+
+.active {
+  color: var(--fav);
+}
+
+.active.labeled {
+  border-color: var(--fav);
+  background: rgba(255, 93, 115, 0.12);
+}
+
+.icon {
+  transition: transform var(--dur) var(--ease);
+}
+
+/* A little pop when toggled on */
+.active .icon {
+  animation: pop 280ms var(--ease);
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.6);
+  }
+  55% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}

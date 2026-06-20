@@ -1,0 +1,59 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 44px 0 8px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 11px 20px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease), transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--surface-2);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(0) scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.status {
+  font-size: 0.95rem;
+  color: var(--muted);
+  min-width: 96px;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.status strong {
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.sep {
+  margin: 0 6px;
+  color: var(--faint);
+}

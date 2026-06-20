@@ -1,0 +1,71 @@
+.wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  left: 16px;
+  color: var(--muted);
+  pointer-events: none;
+  transition: color var(--dur) var(--ease);
+}
+
+.input {
+  width: 100%;
+  padding: 14px 44px 14px 46px;
+  font-size: 1rem;
+  color: var(--text);
+  background: rgba(20, 22, 31, 0.85);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  outline: none;
+  transition: border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+
+.input::placeholder {
+  color: var(--faint);
+}
+
+.input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.input:focus {
+  border-color: var(--accent);
+  background: rgba(20, 22, 31, 0.98);
+  box-shadow: 0 0 0 4px var(--accent-glow);
+}
+
+.wrap:focus-within .icon {
+  color: var(--accent);
+}
+
+.clear {
+  position: absolute;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+
+.clear:hover {
+  color: var(--text);
+  background: var(--surface-3);
+}
+
+.clear:active {
+  transform: scale(0.88);
+}

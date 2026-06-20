@@ -1,0 +1,111 @@
+:root {
+  /* Surfaces — deep, near-black with cool depth */
+  --bg: #07080d;
+  --bg-2: #0c0e16;
+  --surface: #14161f;
+  --surface-2: #1d2030;
+  --surface-3: #272b3d;
+  --border: #2a2e40;
+  --border-strong: #3a3f57;
+
+  /* Text */
+  --text: #f4f5fa;
+  --muted: #9aa0b4;
+  --faint: #6b7185;
+
+  /* Accent — warm amber/gold "spotlight", original (not Netflix red) */
+  --accent: #f5b13d;
+  --accent-soft: #ffce7a;
+  --accent-glow: rgba(245, 177, 61, 0.32);
+  --accent-ink: #2a1d05;
+
+  /* Favorite — rose, distinct from the amber accent */
+  --fav: #ff5d73;
+  --fav-glow: rgba(255, 93, 115, 0.35);
+
+  /* Star/rating */
+  --star: #ffd24a;
+
+  /* Geometry */
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --maxw: 1320px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur: 200ms;
+
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-pop: 0 30px 80px rgba(0, 0, 0, 0.65);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--text);
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+  min-height: 100vh;
+  /* Layered cinematic depth: a soft spotlight glow over a vertical gradient. */
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(
+      1200px 600px at 50% -8%,
+      rgba(245, 177, 61, 0.1),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 100% 0%,
+      rgba(90, 120, 255, 0.08),
+      transparent 55%
+    ),
+    linear-gradient(180deg, var(--bg-2), var(--bg) 40%);
+  background-attachment: fixed;
+}
+
+a {
+  color: var(--accent-soft);
+  text-underline-offset: 2px;
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  display: block;
+}
+
+/* Consistent lucide icon sizing/inheritance */
+svg {
+  flex-shrink: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
