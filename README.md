@@ -37,7 +37,7 @@ A movie discovery web app built with **Next.js (App Router) + TypeScript**. Brow
 ### 1. Clone & install
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Alexsilvin/movie-finder-nahnah.git
 cd "Movie app"
 npm install
 ```
